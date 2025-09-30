@@ -1,0 +1,58 @@
+@use "../abstracts/index" as *;
+
+footer {
+  background-color: $black;
+  color: $white;
+  padding: 10px;
+  text-align: center;
+  h2 {
+    text-transform: uppercase;
+  }
+  ul {
+    li {
+      a {
+        font-size: 20px;
+        text-decoration: none;
+        color: $white;
+        transition: color 0.2s ease-out;
+        &:hover {
+          color: $cyan_electric;
+        }
+      }
+    }
+  }
+  .contact-form {
+    p {
+      span {
+        width: 100%;
+      }
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 12px;
+      br {
+        display: none;
+      }
+      input,
+      textarea {
+        width: 100%;
+        max-width: 500px;
+        padding: 8px 12px;
+        border-radius: 6px;
+        appearance: none;
+        outline: none;
+        border: none;
+        font-family: $roboto_condensed;
+        &[type="submit"] {
+          background-color: $cyan_electric;
+          color: white;
+          cursor: pointer;
+          transition: background-color 0.2s;
+          &:hover {
+            background-color: $cyan_electric_hover;
+          }
+        }
+      }
+    }
+  }
+}

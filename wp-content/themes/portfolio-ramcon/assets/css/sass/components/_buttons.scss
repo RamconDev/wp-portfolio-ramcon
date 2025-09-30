@@ -1,0 +1,22 @@
+@use "../abstracts/index" as *;
+.c-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn_primary {
+  background-color: $cyan_electric;
+  padding: 8px 28px;
+  border-radius: 3px;
+
+  text-decoration: none;
+  line-height: 100%;
+  color: $white;
+
+  transition: background 0.1s ease-in;
+  &:hover {
+    background-color: $cyan_electric_hover;
+
+    color: $white;
+  }
+}

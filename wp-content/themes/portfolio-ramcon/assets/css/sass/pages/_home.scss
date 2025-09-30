@@ -1,0 +1,45 @@
+@use "../abstracts/index" as *;
+
+#home {
+  .hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+
+    background-position: center;
+    background-size: cover;
+    box-shadow: inset 0 -60px 40px $black;
+    h1 {
+      color: $white;
+    }
+    h2 {
+      color: $cyan_electric;
+    }
+  }
+
+  .about {
+    background-color: $black;
+    h2 {
+      color: $white;
+    }
+  }
+
+  .projects {
+    background-color: $black;
+    h2 {
+      color: $white;
+    }
+  }
+
+  .skills {
+    .ditty-item {
+      img {
+        height: 60px;
+      }
+    }
+  }
+
+  .experience {
+    background-color: $grey;
+  }
+}
