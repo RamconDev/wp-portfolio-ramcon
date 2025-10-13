@@ -50,12 +50,36 @@
 
     <?php /*********** 🧩 PROJECTS SECTION ***********/ ?>
     <?php $f_projects = get_field('projects'); ?>
+    <?php
+        $args = [
+            'post_type'         => 'portafolios',
+            'posts_per_page'    => -1
+        ];
+        $loop = new WP_Query($args);
+    ?>
     <section class="projects py-5">
         <div class="container">
             <div class="row">
                 <?php if (isset($f_projects['title']) & $f_projects['title'] != ''): ?>
                     <h2 class="text-center"><?php echo $f_projects['title']; ?></h2>
                 <?php endif; ?>
+            </div>
+            <div class="row">
+                <div class="projetcs-items">
+                    <?php if ( $loop->have_posts() ) : ?>
+                        <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
+                            <div class="item" style="background-image: url(<?php echo has_post_thumbnail() ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/assets/images/default-img/center.jpg'; ?>)">
+                                <div class="c-content">
+                                    <h3 class="text-center"><?php echo get_the_title(); ?></h3>
+                                    <div class="c-button">
+                                        <a href="#" class="btn_primary">View More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endwhile; ?>
+                        <?php wp_reset_postdata(); ?>
+                    <?php endif; ?>
+                </div>
             </div>
         </div>
     </section>
