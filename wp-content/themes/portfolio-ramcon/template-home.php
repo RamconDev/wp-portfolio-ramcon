@@ -65,8 +65,8 @@
                 <?php endif; ?>
             </div>
             <div class="row">
-                <div class="projetcs-items">
-                    <?php if ( $loop->have_posts() ) : ?>
+                <?php if ( $loop->have_posts() ) : ?>
+                    <div class="projetcs-items">
                         <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
                             <div class="item" style="background-image: url(<?php echo has_post_thumbnail() ? get_the_post_thumbnail_url() : get_template_directory_uri() . '/assets/images/default-img/center.jpg'; ?>)">
                                 <div class="c-content">
@@ -78,8 +78,12 @@
                             </div>
                         <?php endwhile; ?>
                         <?php wp_reset_postdata(); ?>
-                    <?php endif; ?>
-                </div>
+                    </div>
+                <?php else: ?>
+                    <div>
+                        <h3>Nothing for now.</h3>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </section>
@@ -125,18 +129,30 @@
                             <div class="item mt-5">                        
                                 <?php $experience = get_field('experience'); ?>
                                 <div class="c-principal">
-                                    <img src="<?php echo has_post_thumbnail() ? get_the_post_thumbnail_url() : ''; ?>" alt="">
+                                    <?php if( has_post_thumbnail() ): ?>
+                                        <img src="<?php echo get_the_post_thumbnail_url(); ?>" alt="">
+                                    <?php endif; ?>
                                     <div class="info">
-                                        <h3><?php echo get_the_title(); ?> <span><?php echo $experience['rol']; ?></span></h3>
-                                        <h4><?php echo $experience['start_date']; ?> to <?php echo $experience['end_date'] ? $experience['end_date'] : 'Actuality' ?></h4>
+                                        <?php if( get_the_title() ): ?>
+                                            <h3><?php echo get_the_title(); ?> <?php echo $experience['rol'] ? '<span>'.$experience['rol'].'</span>' : ''; ?></h3>
+                                        <?php endif; ?>
+                                        <?php if( $experience['start_date'] ): ?>
+                                            <h4><?php echo $experience['start_date']; ?> to <?php echo $experience['end_date'] ? $experience['end_date'] : 'Actuality' ?></h4>
+                                        <?php endif; ?>
                                     </div>
                                 </div>
                                 <div class="c-description">
-                                    <p><?php the_content(); ?></p>
+                                    <?php if( the_content() ) : ?>
+                                        <?php the_content(); ?>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         <?php endwhile; ?>
                         <?php wp_reset_postdata(); ?>
+                    <?php else: ?>
+                        <div class="item mt-5">
+                            <h4>Nothing for now.</h4>
+                        </div>
                     <?php endif; ?>
                 </div>
             </div>
@@ -165,14 +181,24 @@
                 <div class="studies-items">
                     <?php if( $loop->have_posts() ) : ?>
                         <?php while( $loop->have_posts() ) : $loop->the_post(); ?>
-                            <div class="item pt-5">
-                                <?php $studies = get_field('estudios'); ?>
-                                <h5><?php echo $studies['instituto']; ?></h5>
-                                <h3><?php echo get_the_title(); ?></h3>
-                                <span><?php echo $studies['estado']; ?> <?php echo $studies['certificado'] ? '<a href="' . $studies["certificado"] . '">Certificate</a>' : '' ?></span>
-                            </div>
+                            <?php if( get_the_title() ) : ?>
+                                <div class="item mt-5">
+                                    <?php $studies = get_field('estudios'); ?>
+                                    <?php if( $studies['instituto'] ) : ?>
+                                        <h5><?php echo $studies['instituto']; ?></h5>
+                                    <?php endif; ?>
+                                    <h3><?php echo $studies['tipo'] ? $studies['tipo'].': ' : ''; ?> <?php echo get_the_title(); ?></h3>
+                                    <?php if ( $studies['estado'] ) : ?>
+                                        <span><?php echo $studies['estado']; ?> <?php echo $studies['certificado'] ? '<a href="' . $studies["certificado"] . '" target="_blank">Certificate</a>' : '' ?></span>
+                                    <?php endif; ?>
+                                </div>
+                            <?php endif; ?>
                         <?php endwhile; ?>
                         <?php wp_reset_postdata(); ?>
+                    <?php else: ?>
+                        <div class="item mt-5">
+                            <h4>Nothing for now.</h4>
+                        </div>
                     <?php endif; ?>
                 </div>
             </div>
