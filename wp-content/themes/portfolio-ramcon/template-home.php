@@ -29,7 +29,7 @@
 
     <?php /*********** 🧩 ABOUT ME SECTION ***********/ ?>
     <?php $f_about = get_field('about'); ?>
-    <section class="about py-5">
+    <section class="about py-5" id="about-me">
         <div class="container">
             <div class="row">
                 <?php if (isset($f_about['title']) & $f_about['title'] != ''): ?>
@@ -57,7 +57,7 @@
         ];
         $loop = new WP_Query($args);
     ?>
-    <section class="projects py-5">
+    <section class="projects py-5" id="projects-work">
         <div class="container">
             <div class="row">
                 <?php if (isset($f_projects['title']) & $f_projects['title'] != ''): ?>
@@ -87,7 +87,7 @@
     <?php /*********** 🧩 MY SKILLS SECTION ***********/ ?>
     <?php $f_skills = get_field('skills'); ?>
     <?php if (isset($f_skills['slider_shortcode']) & $f_skills['slider_shortcode'] != ''): ?>
-        <section class="skills py-5">
+        <section class="skills py-5"  id="skills">
             <div class="container-large overflow-hidden">
                 <?php if (isset($f_skills['title']) & $f_skills['title'] != ''): ?>
                     <div class="row">
@@ -103,7 +103,7 @@
 
     <?php /*********** 🧩 WORK EXPERIENCE SECTION ***********/ ?>
     <?php $f_experience = get_field('experience'); ?>
-    <section class="experience py-5">
+    <section class="experience py-5" id="experience">
         <div class="container">
             <div class="row">
                 <?php if (isset($f_experience['title']) & $f_experience['title'] != ''): ?>
@@ -145,7 +145,7 @@
                 
     <?php /*********** 🧩 CERTIFICATIONS SECTION ***********/ ?>
     <?php $f_certifications = get_field('certifications'); ?>
-    <section class="certifications py-5">
+    <section class="certifications py-5" id="certifications">
         <img src="<?php echo get_template_directory_uri() . '/assets/images/icons/medal.png'; ?>" alt="" class="bg-img">
         <div class="container">
             <div class="row">
@@ -169,7 +169,7 @@
                                 <?php $studies = get_field('estudios'); ?>
                                 <h5><?php echo $studies['instituto']; ?></h5>
                                 <h3><?php echo get_the_title(); ?></h3>
-                                <span><?php echo $studies['estado']; ?> <?php echo $studies['certificado'] ? '<a href="' . $studies["certificado"] . '">Certificate</a>' : '' ?></span>
+                                <span><?php echo $studies['estado']; ?> <?php echo $studies['certificado'] ? '<a href="' . $studies["certificado"] . '" target="_blank">Certificate</a>' : '' ?></span>
                             </div>
                         <?php endwhile; ?>
                         <?php wp_reset_postdata(); ?>

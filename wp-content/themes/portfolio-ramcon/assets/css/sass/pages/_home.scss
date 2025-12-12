@@ -187,8 +187,12 @@
         }
       }
     }
-    @media ( max-width: 992px ) {
-
+    @media ( max-width: 500px ) {
+      .projetcs-items {
+        .draggable {
+          max-width: calc(100vw - 30px);
+        }
+      }
     }
   }
 
@@ -244,7 +248,8 @@
     overflow: hidden;
     .bg-img {
       position: absolute;
-      right: 1%;
+      z-index: -1;
+      right: -5%;
       top: -10%;
       height: 80vh;
       filter: opacity(.1);
@@ -262,6 +267,11 @@
             text-decoration: none;
           }
         }
+      }
+    }
+    @media ( max-width: 500px ) {
+      .bg-img {
+        right: -60%;
       }
     }
   }

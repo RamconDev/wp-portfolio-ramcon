@@ -4,19 +4,30 @@ header {
   background-color: $black;
   color: $white;
   padding: 10px;
-  .logo {
-    text-transform: uppercase;
+  .logo-url {
     text-decoration: none;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-    color: $white;
+    .logo {
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      color: $white;
+    }
   }
   nav {
+    .burguer {
+      display: none;
+      img {
+        width: 32px;
+        cursor: pointer;
+      }
+    }
     ul {
       list-style: none;
       display: flex;
       justify-content: end;
       gap: 32px;
+      transition: left .2s ease-in;
       li {
         a {
           text-transform: uppercase;
@@ -28,6 +39,39 @@ header {
           &:hover {
             color: $cyan_electric;
           }
+        }
+      }
+    }
+  }
+  @media ( max-width: 768px ) {
+    nav {
+      .burguer {
+        display: flex;
+        justify-content: end;
+      }
+      ul#menu-navbar-menu {
+        position: fixed;
+        top: 44px;
+        left: -100vw;
+        height: calc(100% - 44px);
+        z-index: 999;
+        width: 80%;
+        min-width: 270px;
+        padding: 80px 0px;
+
+        background-color: $black;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        li {
+          a {
+            font-size: 28px;
+          }
+        }
+      }
+      &.active {
+        ul {
+          left: 0px !important;
         }
       }
     }

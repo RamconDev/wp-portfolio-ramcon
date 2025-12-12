@@ -3,8 +3,8 @@
 $black: #1a1a1a;
 $grey: color.scale($black, $lightness: 95%);
 $white: #fff;
-$cyan_electric: #03c3ff;
-$cyan_electric: color.adjust($cyan_electric, $lightness: -10%);
+$cyan_electric_base: #03c3ff;
+$cyan_electric: color.adjust($cyan_electric_base, $lightness: -10%);
 
 // darkness : hover colors
 $cyan_electric_hover: color.adjust($cyan_electric, $lightness: -5%);

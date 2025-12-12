@@ -11,13 +11,16 @@
 </head>
 <body>
     <header>
-        <div class="container">
+        <div class="container-fluid container-md">
             <div class="row">
-                <div class="col-6">
-                    <span class="logo">Hector Ramirez</span>
+                <div class="col-6 d-flex align-items-center">
+                    <a href="<?php echo get_home_url(); ?>" class="logo-url"><span class="logo">Hector Ramirez</span></a>
                 </div>
                 <div class="col-6">
                     <nav>
+                        <div class="burguer">
+                            <img src="<?php echo get_template_directory_uri() . "/assets/images/icons/menu.png"?>" alt="">
+                        </div>
                         <?php
                         if (has_nav_menu('navbar-menu')) {
                             wp_nav_menu([

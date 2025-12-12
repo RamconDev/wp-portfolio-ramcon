@@ -19,7 +19,7 @@ function global_enqueues () {
     // Main Scripts
     wp_enqueue_script('main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), time(), true);
 
-    if (is_front_page()) {
+    if (is_front_page()) { 
         //wp_enqueue_script('index-js', get_template_directory_uri() . '/assets/js/index.js', array('jquery'), time(), true);
     }
 
@@ -32,6 +32,11 @@ function global_enqueues () {
                 'templateUrl' => get_template_directory_uri()
             )
         );
+    }
+
+    if( is_singular('portafolios')) {
+        slick_slider_enqueues();
+        wp_enqueue_script('template-home-js', get_template_directory_uri() . '/assets/js/single-portfolio.js', array('jquery'), time(), true);
     }
 }
 

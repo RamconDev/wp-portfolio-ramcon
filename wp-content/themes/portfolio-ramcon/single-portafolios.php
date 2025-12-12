@@ -35,16 +35,34 @@
                     <?php endif; ?>
 
                     <h2>Description:</h2>
-                    <p><?php echo get_the_content(); ?></p>
+                    <?php the_content(); ?>
                 </div>
-                <div class="col-12 col-md-6 d-flex justify-content-center align-items-center mt-3 mt-md-0">
+                <!-- <div class="col-12 col-md-6 d-flex justify-content-center align-items-center mt-3 mt-md-0">
                     <div id="slider-single">
+
+                    </div>
+                </div> -->
+                <div class="col-12 mt-3 mt-md-0">
+                    <div id="slider-for">
                         <?php foreach($gallery as $item) : ?>
-                            <!-- <div class="item" style="background-image: url(<?php echo $item; ?>);">
-                            </div> -->
-                            <img src="<?php echo $item; ?>" alt="" class="item">
+                            <?php if ( $item ) : ?>
+                                <div>
+                                    <img src="<?php echo $item; ?>" alt="" class="item">
+                                </div>
+                            <?php endif; ?>
                         <?php endforeach; ?>
                     </div>
+
+                    <div id="slider-nav" class="mt-3">
+                        <?php foreach($gallery as $item) : ?>
+                            <?php if ( $item ) : ?>
+                                <div>
+                                    <img src="<?php echo $item; ?>" alt="" class="item">
+                                </div>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    </div>
+
                 </div>
             </div>
         </div>
