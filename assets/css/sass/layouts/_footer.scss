@@ -8,11 +8,20 @@ footer {
   h2 {
     text-transform: uppercase;
   }
-  ul {
+  ul.list-contact {
+    gap: 8px;
     li {
+      display: flex;
+      align-items: center;
+      img {
+        width: 24px;
+        margin-right:8px;
+      }
       a {
         font-size: 20px;
+        font-weight: 400;
         text-decoration: none;
+        text-transform: none;
         color: $white;
         transition: color 0.2s ease-out;
         &:hover {

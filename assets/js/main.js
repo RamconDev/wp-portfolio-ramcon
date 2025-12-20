@@ -10,6 +10,7 @@
   function burguerMenuFunctionality() {
     let burguerBtn = $("header nav .burguer");
     let navMenu = $("header nav");
+    let navLinks = $("header nav li");
 
     burguerBtn.click(() => {
       navMenu.toggleClass('active');
@@ -18,8 +19,8 @@
     $(document).click((e) => {
       if (
         navMenu.hasClass('active') &&
-        !navMenu.is(e.target) &&
-        navMenu.has(e.target).length === 0 &&
+        // !navMenu.is(e.target) &&
+        // navMenu.has(e.target).length === 0 &&
         !burguerBtn.is(e.target) &&
         burguerBtn.has(e.target).length === 0
       ) {
