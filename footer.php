@@ -16,7 +16,7 @@
                             'menu_class'     => 'list-contact d-flex flex-column align-items-start',
                         ]);
                     } else {
-                        echo '<p>Please assign a menu to the Navbar Menu location.</p>';
+                        echo '<p>Please assign a menu to the Footer Menu location.</p>';
                     }
                 ?>
             </div>

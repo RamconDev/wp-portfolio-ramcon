@@ -38,40 +38,43 @@
     //     font-size: 13px;
     //   }
     // }
-    #slider-single {
-      width: 460px;
-      max-width: 100%;
+    #slider-for {
+      width: 100%;
       .draggable {
         margin: auto;
       }
       .item {
         overflow: hidden;
         border-radius: 10px;
-        // border: 1px solid red;
-
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;
+        width: 100%;
+        object-fit: contain;
       }
     }
-  }
-}
-#slider-nav {
-  .slick-track {
-  }
-  .slick-slide {
-    overflow: hidden;
-    margin: 0 10px;
-    height: 100px;
-    width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-      object-fit: cover;
-      height: 100%;
-      width: 100%;
-      cursor: pointer;
+    #slider-nav {
+      .slick-track {
+      }
+      .slick-slide {
+        overflow: hidden;
+        margin: 0 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1px;
+        opacity: .5;
+        transition: border .2s,
+                    opacity .2s;
+        img {
+          object-fit: cover;
+          max-height: 500px;
+          width: 100%;
+          cursor: pointer;
+        }
+        &.slick-current {
+          border: 2px solid $white;
+          opacity: 1;
+        }
+      }
     }
   }
 }

@@ -37,12 +37,7 @@
                     <h2>Description:</h2>
                     <?php the_content(); ?>
                 </div>
-                <!-- <div class="col-12 col-md-6 d-flex justify-content-center align-items-center mt-3 mt-md-0">
-                    <div id="slider-single">
-
-                    </div>
-                </div> -->
-                <div class="col-12 mt-3 mt-md-0">
+                <div class="col-12 col-lg-6 mt-3 mt-md-0">
                     <div id="slider-for">
                         <?php foreach($gallery as $item) : ?>
                             <?php if ( $item ) : ?>
