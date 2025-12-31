@@ -64,4 +64,9 @@ footer {
       }
     }
   }
+  @media( max-width: 980px ) {
+    ul.list-contact {
+      margin-bottom: 30px;
+    }
+  }
 }
