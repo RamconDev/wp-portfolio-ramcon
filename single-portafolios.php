@@ -15,9 +15,9 @@
 
     <?php /*********** 🧩 HERO DESCRIPTION ***********/ ?>
     <?php $gallery = get_field('slider_gallery'); ?>
-    <section class="description py-5">
+    <section class="description">
         <div class="container">
-            <div class="row d-flex align-items-center">
+            <div class="row d-flex align-items-start">
                 <div class="col-12 col-md-6">
                     <h2>Technologies:</h2>
 
